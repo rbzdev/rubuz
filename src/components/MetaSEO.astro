@@ -1,0 +1,113 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: URL | string;
+  lang?: "fr" | "en";
+  type?: "website" | "profile";
+}
+
+const {
+  title: propTitle,
+  description: propDescription,
+  image = "/images/profil.jpeg",
+  canonicalURL = Astro.url,
+  lang = "fr",
+  type = "website",
+} = Astro.props;
+
+// Specific user requested content (Bilingual)
+const realName = "Olivier RUBUZ";
+const nickName = "Mr Rubuz";
+const location = "Lubumbashi ⎯ RDC";
+const experience = "+6 ans";
+
+const content = {
+  fr: {
+    jobTitle: "Développeur Fullstack & Mobile",
+    description: `Développeur fullstack et Mobile, ${experience} d'exp en création de solution modernes et scalables, alliant performance et esthétique. basé à ${location}. Communément appelé ${nickName}, de mon vrai nom ${realName}. Passionné par les nouvelles technologies, l'innovation et l'intelligence artificielle.`,
+    keywords: "Développeur, Fullstack, Mobile, React, Astro, Expo, MongoDB, Freelance, Rubuz, rbzdev, Olivier RUBUZ, Mr Rubuz, Lubumbashi, Congo, RDC"
+  },
+  en: {
+    jobTitle: "Fullstack & Mobile Developer",
+    description: `Fullstack & Mobile Developer, ${experience} experience in building modern and scalable solutions, combining performance and aesthetics. Based in ${location}. Commonly known as ${nickName}, real name ${realName}. Passionate about new technologies, innovation, and artificial intelligence.`,
+    keywords: "Developer, Fullstack, Mobile, React, Astro, Expo, MongoDB, Freelance, Rubuz, rbzdev, Olivier RUBUZ, Mr Rubuz, Lubumbashi, Congo, DRC"
+  }
+};
+
+const currentContent = content[lang];
+
+const siteTitle = propTitle || `${nickName} | ${currentContent.jobTitle}`;
+const siteDescription = propDescription || currentContent.description;
+const siteName = `${nickName} Portfolio`;
+const twitterHandle = "@rubuz_";
+
+const siteUrl = Astro.site ? Astro.site.href : "https://mrubuz.pages.dev";
+const resolvedImageWithDomain = new URL(image, siteUrl).href;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": realName,
+  "alternateName": nickName,
+  "url": siteUrl,
+  "image": resolvedImageWithDomain,
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": location,
+    "addressCountry": "DRC"
+  },
+  "sameAs": [
+    "https://github.com/rbzdev",
+    "https://wa.me/2438998034962"
+  ],
+  "jobTitle": currentContent.jobTitle,
+  "description": currentContent.description
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": siteUrl,
+  "name": siteName,
+  "alternateName": nickName
+};
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{siteTitle}</title>
+<meta name="title" content={siteTitle} />
+<meta name="description" content={siteDescription} />
+<meta name="author" content={realName} />
+<meta name="keywords" content={currentContent.keywords} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={siteDescription} />
+<meta property="og:image" content={resolvedImageWithDomain} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={lang === "fr" ? "fr_FR" : "en_GB"} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={siteTitle} />
+<meta property="twitter:description" content={siteDescription} />
+<meta property="twitter:image" content={resolvedImageWithDomain} />
+{twitterHandle && <meta property="twitter:creator" content={twitterHandle} />}
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>

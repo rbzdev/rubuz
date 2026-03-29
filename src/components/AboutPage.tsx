@@ -4,6 +4,7 @@ import { Icon } from '@iconify/react';
 import { translations, type Language } from '../i18n/translations';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { ImageZoom } from './ui/image-zoom';
 import { Button } from './ui/button';
 
 export default function AboutPage() {
@@ -80,7 +81,7 @@ export default function AboutPage() {
               className="flex flex-col md:flex-row gap-8 items-start"
             >
               <div className="w-full md:w-1/3 aspect-square rounded-[2rem] overflow-hidden border-2 border-primary/20 shadow-2xl">
-                <img src="/images/profil.jpeg" alt="Profile" className="w-full h-full object-cover" />
+                <ImageZoom src="/images/profil.jpeg" alt="Profile" className="w-full h-full" />
               </div>
               <div className="flex-1 space-y-6">
                 <h1 className="text-5xl tracking-tight text-primary leading-none">
@@ -126,9 +127,12 @@ export default function AboutPage() {
                   <h2 className="text-2xl uppercase tracking-tighter">{lang === 'fr' ? 'Portfolio Visuel' : 'Visual Portfolio'}</h2>
                   <div className="grid grid-cols-2 lg:grid-cols-3 auto-rows-[200px]">
                     {mainGallery.map((img, i) => (
-                      <div key={i} className={`relative overflow-hidden group ${img.className} border border-border/50 rounded-sm shadow-xl shadow-primary/5`}>
-                        <img src={img.src} alt="Visual Portfolio" className="object-cover w-full h-full grayscale-80 group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100" />
-                      </div>
+                      <ImageZoom
+                        key={i}
+                        src={img.src}
+                        alt="Visual Portfolio"
+                        className={`${img.className} border border-border/50 rounded-sm shadow-xl shadow-primary/5`}
+                      />
                     ))}
                   </div>
                 </motion.section>
@@ -146,12 +150,12 @@ export default function AboutPage() {
                   </div>
                   <div className="grid grid-cols-2 lg:grid-cols-3 gap-0 auto-rows-[150px]">
                     {communityImages.map((img, i) => (
-                      <div key={i} className={`relative overflow-hidden rounded-sm group ${img.className} border border-border/50 shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-shadow`}>
-                        <img src={img.src} alt="Community" className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105" />
-                        <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                          <p className="text-white text-xs tracking-widest">DevFest Event</p>
-                        </div>
-                      </div>
+                      <ImageZoom
+                        key={i}
+                        src={img.src}
+                        alt="Community Event"
+                        className={`${img.className} border border-border/50 shadow-xl shadow-primary/5 `}
+                      />
                     ))}
                   </div>
                 </motion.section>

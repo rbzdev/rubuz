@@ -35,18 +35,18 @@ export default function LandingPage() {
       <Navbar lang={lang} toggleLang={toggleLang} />
 
       {/* Hero Section */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 pt-32 pb-20 relative overflow-hidden">
+      <main className="flex-1 flex flex-col items-center justify-center px-6 pt-20 pb-20 relative overflow-hidden">
         {/* Abstract Glow Background */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[140px] -z-10 pointer-events-none opacity-50" />
 
         {/* Title and subtitle */}
-        <section className="max-w-5xl w-full text-center space-y-12 relative z-10">
+        <section className="max-w-5xl w-full text-center space-y-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-3 px-3 py-2 rounded-full bg-primary/10 text-primary text-xs mb-10 border border-primary/20 backdrop-blur-[1px] shadow-xl shadow-primary/5">
+            <div className="inline-flex items-center gap-3 px-3 py-2 rounded-full bg-primary/10 text-primary text-xs mb-4 border border-primary/20 backdrop-blur-[1px] shadow-xl shadow-primary/5">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
@@ -59,7 +59,7 @@ export default function LandingPage() {
             <h1 className="text-7xl md:text-9xl tracking-tight leading-none">
               {lang === 'fr' ? <>
                 <span className='text-muted-foreground/40 block md:inline'>Développeur Fullstack </span>
-                <br />
+                <br className='hidden sm:block' />
                 <span> & </span>
                 <br />
                 <span className='text-muted-foreground/40 block md:inline'> Mobile </span>

@@ -1,54 +1,68 @@
 ---
+import MetaSEO from "../components/MetaSEO.astro";
+import "../styles/global.css";
+
 interface Props {
-	title: string;
-	lang?: string;
+  title?: string;
+  description?: string;
+  lang?: "fr" | "en";
 }
 
-const { title, lang = "fr" } = Astro.props;
-import "../styles/global.css";
+const { title, description, lang = "fr" } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang={lang}>
-	<head>
-		<meta charset="UTF-8" />
-		<script is:inline>
-			const theme = (() => {
-				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-					return localStorage.getItem('theme');
-				}
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					return 'dark';
-				}
-				return 'light';
-			})();
+  <head>
+    <MetaSEO title={title} description={description} lang={lang} />
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
 
-			if (theme === 'light') {
-				document.documentElement.classList.remove('dark');
-			} else {
-				document.documentElement.classList.add('dark');
-			}
-			window.localStorage.setItem('theme', theme);
-		</script>
-		<meta name="description" content="Portfolio de Rubuz - Développeur Fullstack" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
-	</head>
-	<body class="min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground">
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script>
+    <meta
+      name="google-site-verification"
+      content="8cPOHSl-oitjTS3dhcbsOLOaG8f8L1O9nyQXyE5HjKs"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Outfit:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="min-h-screen bg-background text-foreground antialiased selection:bg-primary selection:text-primary-foreground"
+  >
 		<slot />
+		<style is:global>
+			:root {
+				font-family: "Inter", sans-serif;
+			}
+			h1,
+			h2,
+			h3,
+			h4,
+			h5,
+			h6 {
+				font-family: "Outfit", sans-serif;
+			}
+		</style>
 	</body>
 </html>
-
-<style is:global>
-	:root {
-		font-family: 'Inter', sans-serif;
-	}
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Outfit', sans-serif;
-	}
-</style>

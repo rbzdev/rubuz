@@ -6,7 +6,7 @@ export const translations = {
       projects: "Projets"
     },
     hero_title: "Développeur Fullstack Web & Mobile",
-    hero_subtitle: "Désigne des expériences web et mobiles modernes, fluides et performantes.",
+    hero_subtitle: "Je conçois des expériences web et mobiles modernes, fluides. Alliant design et performance.",
     view_projects: "Voir mes projets",
     contact_me: "Me contacter",
     skills: "Compétences",

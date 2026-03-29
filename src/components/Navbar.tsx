@@ -31,7 +31,7 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
 
         <button
           onClick={toggleLang}
-          className="flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 hover:bg-accent/50 transition-all text-[10px] font-black tracking-widest uppercase md:backdrop-blur-sm group"
+          className="flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 hover:bg-accent/50 transition-all text-[10px] uppercase md:backdrop-blur-sm group"
         >
           <Icon icon="lucide:languages" className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
           {lang.toUpperCase()}

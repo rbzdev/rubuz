@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "EcoTrack Mobile",
+    "description": "Une application mobile pour suivre son empreinte carbone en temps réel, développée avec React Native et Expo.",
+    "tech": ["React Native", "Expo", "Node.js", "Express"],
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800",
+    "link": "https://github.com",
+    "type": "Mobile",
+    "year": "2024",
+    "status": "active",
+    "longDescription": "EcoTrack est une solution mobile complète permettant aux utilisateurs de mesurer et de réduire leur impact environnemental. L'application utilise des algorithmes sophistiqués pour calculer l'empreinte carbone à partir des activités quotidiennes : transport, alimentation et consommation d'énergie. L'interface est conçue pour être motivante avec des défis communautaires et des badges de progression."
+  },
+  {
+    "id": "2",
+    "title": "Zenith Real Estate",
+    "description": "Plateforme web de gestion immobilière avec visites virtuelles 3D et tableau de bord administrateur complet.",
+    "tech": ["Next.js", "Tailwind CSS", "Three.js", "Nest.js"],
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    "link": "https://github.com",
+    "type": "Web",
+    "year": "2023",
+    "status": "active",
+    "longDescription": "Zenith redéfinit l'expérience immobilière en ligne. En intégrant la 3D interactive, les clients peuvent visiter les propriétés depuis leur salon. Le backend gère des milliers d'annonces en temps réel avec un système de cache ultra-rapide. L'architecture micro-frontends permet une évolution agile du produit."
+  },
+  {
+    "id": "3",
+    "title": "Nexus OS",
+    "description": "Un système d'exploitation simulé dans le navigateur pour explorer des concepts de design futuristes.",
+    "tech": ["React", "Framer Motion", "Vite"],
+    "image": "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?auto=format&fit=crop&q=80&w=800",
+    "link": "https://github.com",
+    "type": "Web",
+    "year": "2024",
+    "status": "inacheved",
+    "longDescription": "Nexus OS n'est pas seulement une application, c'est une exploration futuriste de l'interaction humain-machine. Développé pour démontrer les capacités de React et Framer Motion, il propose un système de fenêtrage complexe, un terminal fonctionnel et un explorateur de fichiers simulé. Un projet qui explore le 'glassmorphism' et le néomorphisme."
+  },
+  {
+    "id": "4",
+    "title": "Astra Wallet",
+    "description": "Wallet crypto ultra-sécurisé supportant plusieurs blockchains avec une UX ultra-simplifiée.",
+    "tech": ["React Native", "Web3.js", "Solidity"],
+    "image": "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&q=80&w=800",
+    "link": "https://github.com",
+    "type": "Mobile",
+    "year": "2024",
+    "status": "abandoned",
+    "longDescription": "Astra Wallet vise l'adoption massive du Web3 par la simplicité. En retirant les frictions techniques de la gestion des clés privées (MPC), le wallet permet aux utilisateurs non avertis de naviguer dans l'écosystème DeFi en toute sécurité."
+  },
+  {
+    "id": "5",
+    "title": "Nova AI",
+    "description": "Plateforme de génération d'images assistée par IA avec des modèles personnalisés pour les designers.",
+    "tech": ["Python", "Stable Diffusion", "Next.js"],
+    "image": "https://images.unsplash.com/photo-1675557009875-436f595b18b4?auto=format&fit=crop&q=80&w=800",
+    "link": "https://github.com",
+    "type": "SaaS",
+    "year": "2023",
+    "status": "deleted",
+    "longDescription": "Nova AI démocratise la création visuelle pour les agences de communication. En s'appuyant sur des workflows de diffusion stables optimisés, la plateforme permet de créer des assets de marque cohérents en quelques secondes."
+  }
+]

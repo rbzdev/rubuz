@@ -15,8 +15,8 @@ export const translations = {
     about_me: {
       title: "À propos de moi",
       description: "Passionné par le développement depuis plus de 5 ans, je me spécialise dans la création d'applications robustes et scalables. Mon approche combine design minimaliste et performances optimales.",
-      experience_years: "5+ Années d'expérience",
       skills_title: "Savoir-faire",
+      tools_title: "Outils & Environnement",
       gdg_title: "GDG Member & Google Badges",
       gdg_desc: "Membre actif du Google Developer Group. Passionné par les technologies Google, de Firebase au Cloud Platform.",
       address: "Adresse",
@@ -43,8 +43,8 @@ export const translations = {
     about_me: {
       title: "About Me",
       description: "Passionate about development for over 5 years, I specialize in building robust and scalable applications. My approach combines minimalist design with optimal performance.",
-      experience_years: "5+ Years of Experience",
       skills_title: "Expertise",
+      tools_title: "Tools & Environment",
       gdg_title: "GDG Member & Google Badges",
       gdg_desc: "Active member of the Google Developer Group. Passionate about Google technologies, from Firebase to Google Cloud Platform.",
       address: "Address",

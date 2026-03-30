@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { translations, type Language } from '../i18n/translations';
 import projectsData from '../data/projects.json';
+import { ImageZoom } from './ui/image-zoom';
 import { Button } from './ui/button';
 
 interface Project {
@@ -14,6 +15,7 @@ interface Project {
    longDescription?: string;
    tech: string[];
    image: string;
+   gallery?: string[];
    link: string;
    type: string;
    year?: string;
@@ -101,7 +103,7 @@ export default function ProjectsPage() {
                      layoutId={`card-${project.id}`}
                      key={project.id}
                      onClick={() => setSelectedId(project.id)}
-                     className={`group relative overflow-hidden rounded-xl border border-border/50 bg-secondary/10 cursor-pointer shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all duration-500
+                     className={`group relative overflow-hidden rounded-sm border border-border/50 bg-secondary/10 cursor-pointer shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all duration-500
                 ${i % 4 === 0 ? 'md:col-span-2 md:row-span-2' : ''}
                 ${i % 4 === 3 ? 'md:col-span-1 md:row-span-2' : ''}
               `}
@@ -110,7 +112,7 @@ export default function ProjectsPage() {
                         layoutId={`img-${project.id}`}
                         src={project.image}
                         alt={project.title}
-                        className="absolute inset-0 object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                        className="absolute inset-0 object-cover w-full h-full  transition-all duration-700 scale-100 group-hover:scale-105"
                      />
                      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
 
@@ -161,12 +163,7 @@ export default function ProjectsPage() {
                      >
                         {/* Left: Content Image */}
                         <div className="w-full md:w-1/2 relative bg-secondary">
-                           <motion.img
-                              layoutId={`img-${selectedId}`}
-                              src={selectedProject.image}
-                              alt={selectedProject.title}
-                              className="w-full h-full object-cover"
-                           />
+                           <ImageZoom src={selectedProject.image} alt={selectedProject.title} className="w-full h-full" />
                            <button
                               onClick={() => setSelectedId(null)}
                               className="absolute top-6 left-6 p-4 bg-background/50 backdrop-blur-md rounded-full border border-white/20 hover:scale-110 transition-transform md:hidden"
@@ -217,18 +214,31 @@ export default function ProjectsPage() {
                               initial={{ opacity: 0, y: 20 }}
                               animate={{ opacity: 1, y: 0 }}
                               transition={{ delay: 0.2 }}
-                              className="space-y-6"
+                              className="space-y-12"
                            >
-                              <p className="text-sm leading-relaxed text-muted-foreground">
-                                 {selectedProject.longDescription || selectedProject.description}
-                              </p>
-                              <div className="flex flex-wrap gap-2 pt-4">
-                                 {selectedProject.tech.map((t, idx) => (
-                                    <span key={idx} className="text-xs px-3 py-1 bg-secondary rounded-md border border-border">
-                                       {t}
-                                    </span>
-                                 ))}
+                              <div className="space-y-6">
+                                 <p className="text-sm leading-relaxed text-muted-foreground">
+                                    {selectedProject.longDescription || selectedProject.description}
+                                 </p>
                               </div>
+
+                              {/* Gallery Grid */}
+                              {selectedProject.gallery && selectedProject.gallery.length > 0 && (
+                                 <div className="space-y-6 pt-12 border-t border-border/50">
+                                    <h3 className="text-lg uppercase tracking-tighter">{lang === 'fr' ? 'Galerie du projet' : 'Project Gallery'}</h3>
+                                    <div className="grid grid-cols-2 gap-4">
+                                       {selectedProject.gallery.map((img, idx) => (
+                                          <div key={idx} className="aspect-video">
+                                             <ImageZoom
+                                                src={img}
+                                                alt={`${selectedProject.title} thumbnail ${idx + 1}`}
+                                                className="w-full h-full rounded-lg border border-border/50"
+                                             />
+                                          </div>
+                                       ))}
+                                    </div>
+                                 </div>
+                              )}
                            </motion.div>
 
                            {selectedProject.link && selectedProject.status !== 'deleted' && (

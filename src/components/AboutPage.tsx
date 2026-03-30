@@ -47,22 +47,37 @@ export default function AboutPage() {
     { name: 'MySQL', icon: 'logos:mysql' },
     { name: 'Prisma ORM', icon: 'skill-icons:prisma' },
     { name: 'Inertia.js', icon: 'devicon:inertiajs' },
+    { name: 'Vite', icon: 'devicon:vitejs' },
+    { name: 'HTML', icon: 'devicon:html5' },
+    { name: 'CSS', icon: 'devicon:css3' },
+  ];
+
+  const tools = [
     { name: 'Git', icon: 'material-icon-theme:git' },
     { name: 'GitHub', icon: 'mdi:github' },
+    { name: 'ChatGPT', icon: 'arcticons:openai-chatgpt' },
+    { name: 'Postman', icon: 'skill-icons:postman' },
+    { name: 'Docker', icon: 'skill-icons:docker' },
+    { name: 'Vercel', icon: 'skill-icons:vercel-dark' },
+    { name: 'Figma', icon: 'material-icon-theme:figma' },
+    { name: 'vsCode', icon: 'material-icon-theme:vscode' },
+    { name: 'Antigravity', icon: 'material-symbols:antigravity' },
+    { name: 'Google Cloud Solutions', icon: 'devicon:googlecloud' },
+    { name: 'App Store Connect', icon: 'ion:logo-apple-appstore' },
+    { name: 'Google Play Console', icon: 'mdi:google-play' },
+
+
 
   ];
 
   const mainGallery = [
     { src: "/images/profil.jpeg", className: "col-span-1 row-span-2" },
-    { src: "/images/me_no_air.JPG", className: "col-span-1 row-span-1" },
     { src: "/images/prof_dev_1.png", className: "col-span-1 row-span-1" },
-    { src: "/images/prof_dev_3.png", className: "col-span-2 row-span-1" },
     { src: "/images/me.png", className: "col-span-1 row-span-1" },
-    { src: "/images/me_1.png", className: "col-span-1 row-span-1" },
     { src: "/images/me_2.png", className: "col-span-1 row-span-1" },
 
-    { src: "/images/me_3.png", className: "col-span-2 row-span-1" },
-    { src: "/images/me_4.png", className: "col-span-1 row-span-1" },
+    { src: "/images/me_3.png", className: "col-span-1 row-span-1 lg:row-span-3" },
+    { src: "/images/me_4.png", className: "col-span-2 row-span-2" },
   ];
 
   const communityImages = [
@@ -79,7 +94,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
 
           {/* Main Content */}
-          <div className="lg:col-span-8 space-y-20">
+          <div className="lg:col-span-8 space-y-16">
             <motion.section
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -101,20 +116,39 @@ export default function AboutPage() {
 
             <motion.section
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
               className="space-y-6"
             >
               <h2 className="text-2xl border-b border-border pb-2 inline-block uppercase tracking-tighter">
                 {t.about_me.skills_title}
               </h2>
               <div className="flex flex-wrap gap-4">
-
                 {skills.map((skill, index) => (
-
-                  <div key={index} className="flex items-center gap-2 px-2 py-2 bg-secondary/50 rounded-lg border  hover:border-primary/30 transition-colors">
+                  <div key={index} className="flex items-center gap-2 px-2 py-2 bg-secondary/50 rounded-lg border hover:border-primary/30 transition-colors">
                     <Icon icon={skill.icon} className="text-xl" />
                     <span className="font text-sm">{skill.name}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.section>
+
+            <motion.section
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="space-y-6"
+            >
+              <h2 className="text-2xl border-b border-border pb-2 inline-block uppercase ">
+                {t.about_me.tools_title}
+              </h2>
+              <div className="flex flex-wrap gap-4">
+                {tools.map((tool, index) => (
+                  <div key={index} className="flex items-center gap-2 px-2 py-2 bg-accent/30 rounded-lg border hover:border-primary/30 transition-colors">
+                    <Icon icon={tool.icon} className="text-xl" />
+                    <span className="font text-sm">{tool.name}</span>
                   </div>
                 ))}
               </div>
@@ -160,7 +194,7 @@ export default function AboutPage() {
                         key={i}
                         src={img.src}
                         alt="Community Event"
-                        className={`${img.className} border border-border/50 shadow-xl shadow-primary/5 saturate-10 hover:saturate-100`}
+                        className={`${img.className} border border-border/50 rounded-sm shadow-xl shadow-primary/5 saturate-10 hover:saturate-100`}
                       />
                     ))}
                   </div>

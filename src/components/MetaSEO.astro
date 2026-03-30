@@ -27,13 +27,15 @@ const content = {
   fr: {
     jobTitle: "Développeur Fullstack & Mobile",
     description: `Développeur fullstack et Mobile, ${experience} d'exp en création de solution modernes et scalables, alliant performance et esthétique. basé à ${location}. Communément appelé ${nickName}, de mon vrai nom ${realName}. Passionné par les nouvelles technologies, l'innovation et l'intelligence artificielle.`,
-    keywords: "Développeur, Fullstack, Mobile, React, Astro, Expo, MongoDB, Freelance, Rubuz, rbzdev, Olivier RUBUZ, Mr Rubuz, Lubumbashi, Congo, RDC"
+    keywords:
+      "Développeur, Fullstack, Mobile, React, Astro, Expo, MongoDB, Freelance, Rubuz, rbzdev, Olivier RUBUZ, Mr Rubuz, Lubumbashi, Congo, RDC",
   },
   en: {
     jobTitle: "Fullstack & Mobile Developer",
     description: `Fullstack & Mobile Developer, ${experience} experience in building modern and scalable solutions, combining performance and aesthetics. Based in ${location}. Commonly known as ${nickName}, real name ${realName}. Passionate about new technologies, innovation, and artificial intelligence.`,
-    keywords: "Developer, Fullstack, Mobile, React, Astro, Expo, MongoDB, Freelance, Rubuz, rbzdev, Olivier RUBUZ, Mr Rubuz, Lubumbashi, Congo, DRC"
-  }
+    keywords:
+      "Developer, Fullstack, Mobile, React, Astro, Expo, MongoDB, Freelance, Rubuz, rbzdev, Olivier RUBUZ, Mr Rubuz, Lubumbashi, Congo, DRC",
+  },
 };
 
 const currentContent = content[lang];
@@ -49,29 +51,26 @@ const resolvedImageWithDomain = new URL(image, siteUrl).href;
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": realName,
-  "alternateName": nickName,
-  "url": siteUrl,
-  "image": resolvedImageWithDomain,
-  "address": {
+  name: realName,
+  alternateName: nickName,
+  url: siteUrl,
+  image: resolvedImageWithDomain,
+  address: {
     "@type": "PostalAddress",
-    "addressLocality": location,
-    "addressCountry": "DRC"
+    addressLocality: location,
+    addressCountry: "DRC",
   },
-  "sameAs": [
-    "https://github.com/rbzdev",
-    "https://wa.me/2438998034962"
-  ],
-  "jobTitle": currentContent.jobTitle,
-  "description": currentContent.description
+  sameAs: ["https://github.com/rbzdev", "https://wa.me/243998034962"],
+  jobTitle: currentContent.jobTitle,
+  description: currentContent.description,
 };
 
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": siteUrl,
-  "name": siteName,
-  "alternateName": nickName
+  url: siteUrl,
+  name: siteName,
+  alternateName: nickName,
 };
 ---
 
@@ -109,5 +108,7 @@ const websiteSchema = {
 {twitterHandle && <meta property="twitter:creator" content={twitterHandle} />}
 
 <!-- JSON-LD Structured Data -->
-<script type="application/ld+json" set:html={JSON.stringify(personSchema)}></script>
-<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}></script>
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)}
+></script>
+<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)}
+></script>

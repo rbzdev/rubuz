@@ -94,7 +94,7 @@ export default function LandingPage() {
               </Button>
 
             </a>
-            <a href="https://wa.me/2438998034962" target='_blank'>
+            <a href="https://wa.me/243998034962" target='_blank'>
               <Button className="group overflow-hidden">
                 {t.contact_me}
                 <Icon icon="iconoir:whatsapp" className="text-3xl group-hover:scale-[3] group-hover:translate-x-2 group-hover:-translate-y-1 group-hover:text-green-500 dark:group-hover:text-green-700 transition-all" />

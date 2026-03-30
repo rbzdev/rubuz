@@ -63,14 +63,14 @@ export function ImageZoom({ src, alt, className = "", imageClassName = "" }: Ima
             {/* Image Container */}
             <motion.div
               layoutId={`container-${src}-${uniqueId}`}
-              className="relative z-10 w-full max-w-6xl h-fit max-h-[90vh] rounded-xs overflow-hidden shadow-2xl border border-border/50 bg-secondary/10 pointer-events-auto"
+              className="relative z-10 w-fit h-fit max-w-[95vw] max-h-[95vh] rounded-xs overflow-hidden shadow-2xl pointer-events-auto"
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
             >
               <motion.img
                 layoutId={`img-${src}-${uniqueId}`}
                 src={src}
                 alt={alt}
-                className="w-full h-full object-contain object-center cursor-zoom-out"
+                className="w-auto h-auto max-w-full max-h-[90vh] object-contain cursor-zoom-out block mx-auto"
                 onClick={() => setIsOpen(false)}
               />
               <button

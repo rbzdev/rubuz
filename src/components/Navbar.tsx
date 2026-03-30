@@ -64,9 +64,9 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
           {!isScrolled && (
             <button
               onClick={speak}
-              className="absolute -right-12 -top-2 text-[11px] text-muted-foreground/50 hover:text-primary transition-colors flex items-center gap-1 cursor-pointer group"
+              className="absolute -right-12 -top-2 text-[9px] text-muted-foreground/50 hover:text-primary transition-colors flex items-center gap-1 cursor-pointer group"
             >
-              [ /mʁu.bu.z/ ]
+              [ /ʁubuz/ ]
               <Icon icon="lucide:volume-2" className="w-2.5 h-2.5 group-hover:scale-125 transition-transform" />
             </button>
           )}

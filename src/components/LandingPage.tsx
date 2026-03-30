@@ -165,7 +165,7 @@ export default function LandingPage() {
       </main>
 
       {/* About Me Section */}
-      <section className='p-2 flex flex-col items-center justify-center gap-4 border-t pt-12'>
+      <section className='relative p-2 flex flex-col items-center justify-center gap-4 border-t pt-12'>
 
         <BlurFade delay={0.25} inView>
           <h3 className='text-xl'> {lang === 'fr' ? <> <span>Actuellement en train de construire</span> <a href="https://github.com/rbzdev/orix" target='_blank' className='text-sky-500 hover:underline'> orix-ui </a> </> : <> <span>Actually building</span> <a href="https://github.com/rbzdev/orix" target='_blank' className='text-sky-500 hover:underline'> orix-ui </a> </>} </h3>
@@ -179,7 +179,7 @@ export default function LandingPage() {
 
 
           {/* Link */}
-          <div className=" hidden group-hover:flex absolute bottom-0 left-0 w-full h-1/3 bg-linear-to-t from-background to-transparent backdrop-blur-[1px] items-end justify-end p-2 gap-2 transition-all animate-in fade-in slide-in-from-bottom-10 duration-300">
+          <div className=" hidden group-hover:flex absolute top-0 left-0 w-full h-1/3 bg-linear-to-b from-background to-transparent backdrop-blur-[1px] items-start justify-end p-2 gap-2 transition-all animate-in fade-in slide-in-from-bottom-10 duration-300">
             <a href="https://github.com/rbzdev/orix" target='_blank'>
               <Button variant={"outline"} size={"icon"} className="icon">
                 <Icon icon="iconoir:github" className="" />
@@ -194,7 +194,10 @@ export default function LandingPage() {
           </div>
         </BlurFade>
 
+        {/* layer */}
+        <div className=" absolute bottom-0 left-0 w-full h-2/6 bg-linear-to-t from-background to-transparent backdrop-blur-[1px] items-end justify-end p-2 gap-2 transition-all animate-in fade-in slide-in-from-bottom-10 duration-300">
 
+        </div>
       </section>
 
       <Footer />

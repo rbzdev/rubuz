@@ -6,8 +6,8 @@ export default function Footer() {
     <footer className="px-6 py-16 border-t border-border mt-20 bg-background/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 text-sm">
         <div className="flex flex-col gap-4 text-center md:text-left">
-          <div className="text-xl font-bold tracking-tight">
-            Rubuz<span className="text-primary">.</span>
+          <div className="text-xl tracking-tight">
+            Mr Rubuz<span className="text-primary">.</span>
           </div>
           <p className="text-muted-foreground font-medium">© {new Date().getFullYear()} Rubuz Portfolio. Built with Astro & React.</p>
         </div>

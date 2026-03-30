@@ -57,6 +57,12 @@ export default function AboutPage() {
     { src: "/images/me_no_air.JPG", className: "col-span-1 row-span-1" },
     { src: "/images/prof_dev_1.png", className: "col-span-1 row-span-1" },
     { src: "/images/prof_dev_3.png", className: "col-span-2 row-span-1" },
+    { src: "/images/me.png", className: "col-span-1 row-span-1" },
+    { src: "/images/me_1.png", className: "col-span-1 row-span-1" },
+    { src: "/images/me_2.png", className: "col-span-1 row-span-1" },
+
+    { src: "/images/me_3.png", className: "col-span-2 row-span-1" },
+    { src: "/images/me_4.png", className: "col-span-1 row-span-1" },
   ];
 
   const communityImages = [
@@ -81,7 +87,7 @@ export default function AboutPage() {
               className="flex flex-col md:flex-row gap-8 items-start"
             >
               <div className="w-full md:w-1/3 aspect-square rounded-[2rem] overflow-hidden border-2 border-primary/20 shadow-2xl">
-                <ImageZoom src="/images/profil.jpeg" alt="Profile" className="w-full h-full" />
+                <ImageZoom src="/images/me_4.png" alt="Profile" className="w-full h-full saturate-50 hover:saturate-100" />
               </div>
               <div className="flex-1 space-y-6">
                 <h1 className="text-5xl tracking-tight text-primary leading-none">
@@ -131,7 +137,7 @@ export default function AboutPage() {
                         key={i}
                         src={img.src}
                         alt="Visual Portfolio"
-                        className={`${img.className} border border-border/50 rounded-sm shadow-xl shadow-primary/5`}
+                        className={`${img.className} border border-border/50 rounded-sm shadow-xl shadow-primary/5 saturate-20 hover:saturate-100 backdrop-blur-sm`}
                       />
                     ))}
                   </div>
@@ -154,7 +160,7 @@ export default function AboutPage() {
                         key={i}
                         src={img.src}
                         alt="Community Event"
-                        className={`${img.className} border border-border/50 shadow-xl shadow-primary/5 `}
+                        className={`${img.className} border border-border/50 shadow-xl shadow-primary/5 saturate-10 hover:saturate-100`}
                       />
                     ))}
                   </div>

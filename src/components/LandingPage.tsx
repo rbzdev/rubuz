@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import { translations, type Language } from '../i18n/translations';
+
+// UI Components
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { Button } from './ui/button';
 import { BlurFade } from './ui/blur-fade';
+
+// 
+import { TextAnimate } from "@/components/ui/text-animate"
 
 export default function LandingPage() {
   const [lang, setLang] = useState<Language>(() => {
@@ -46,9 +51,9 @@ export default function LandingPage() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-3 px-3 py-2 rounded-full bg-primary/10 text-primary text-xs mb-4 border border-primary/20 backdrop-blur-[1px] shadow-xl shadow-primary/5">
+            <div className="inline-flex items-center gap-1 px-3 py-2 rounded-full bg-primary/10 text-primary text-xs mb-4 border border-primary/20 backdrop-blur-[1px] shadow-xl shadow-primary/5">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                <span className="animate-ping duration-1000 absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
               </span>
               {lang === 'fr' ? 'Actuellement actif' : 'Currently active'}
@@ -56,24 +61,30 @@ export default function LandingPage() {
           </motion.div>
 
           <BlurFade delay={0.25} inView>
-            <h1 className="text-7xl md:text-9xl tracking-tight leading-none">
+            <h1 className="text-6xl md:text-7xl lg:text-9xl tracking-tight leading-none">
               {lang === 'fr' ? <>
-                <span className='text-muted-foreground/40 block md:inline'>Développeur Fullstack </span>
+                <span className='text-muted-foreground/80 block md:inline'>
+                  Développeur Fullstack
+                </span>
                 <br className='hidden sm:block' />
                 <span> & </span>
                 <br />
-                <span className='text-muted-foreground/40 block md:inline'> Mobile </span>
+                <TextAnimate animation="blurIn" by="character" duration={0.6} className='text-muted-foreground/80 block md:inline'> Mobile </TextAnimate>
               </>
                 :
                 <>
-                  <span className='text-muted-foreground/40 block md:inline'>Fullstack </span>
+                  <TextAnimate animation="blurIn" by="character" duration={0.8} className='text-muted-foreground/40 block md:inline'> Fullstack </TextAnimate>
                   <br className='hidden sm:block' />
                   <span> & </span>
                   <br />
-                  <span className='text-muted-foreground/40 block md:inline'> Mobile Developer</span>
+                  <span className='text-muted-foreground/40 block md:inline '> Mobile Developer</span>
                 </>}
             </h1>
           </BlurFade>
+
+          {/* <TextAnimate animation="blurInUp" by="word">
+            Blur in by word
+          </TextAnimate> */}
 
           <BlurFade delay={0.25} inView>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto ">
@@ -168,7 +179,7 @@ export default function LandingPage() {
       <section className='relative p-2 flex flex-col items-center justify-center gap-4 border-t pt-12'>
 
         <BlurFade delay={0.25} inView>
-          <h3 className='text-xl'> {lang === 'fr' ? <> <span>Actuellement en train de construire</span> <a href="https://github.com/rbzdev/orix" target='_blank' className='text-sky-500 hover:underline'> orix-ui </a> </> : <> <span>Actually building</span> <a href="https://github.com/rbzdev/orix" target='_blank' className='text-sky-500 hover:underline'> orix-ui </a> </>} </h3>
+          <h3 className='text-xl'> {lang === 'fr' ? <> <span>Construis actuellement</span> <a href="https://github.com/rbzdev/orix" target='_blank' className='text-sky-500 hover:underline'> orix-ui </a> </> : <> <span>Actually building</span> <a href="https://github.com/rbzdev/orix" target='_blank' className='text-sky-500 hover:underline'> orix-ui </a> </>} </h3>
         </BlurFade>
 
         {/* ScreenShots */}
@@ -186,7 +197,7 @@ export default function LandingPage() {
               </Button>
             </a>
 
-            <a href="https://orix-three.vercel.app" target='_blank'>
+            <a href="https://orix.safaridew.com" target='_blank'>
               <Button variant={"outline"} size={"icon"} className="icon">
                 <Icon icon="iconoir:globe" className="" />
               </Button>
@@ -200,7 +211,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer lang={lang} />
     </div >
   );
 }

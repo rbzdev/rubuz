@@ -15,8 +15,12 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
 
   // States for scroll effect
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isAboutPage, setIsAboutPage] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setIsAboutPage(window.location.pathname === '/me');
+    }
     return scrollY.onChange((latest) => {
       setIsScrolled(latest > 50);
     });
@@ -74,15 +78,27 @@ export default function Navbar({ lang, toggleLang }: NavbarProps) {
 
         <nav className="flex items-center gap-2 md:gap-4">
           {/* Me link */}
-          <a href="/me" className="text-xs hover:text-primary transition-colors flex items-center justify-center">
-            <img src="/images/profil.jpeg" alt="Profile" className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-border/50 object-cover" />
+          <a
+            href="/me"
+            className="text-xs hover:text-primary transition-colors flex items-center justify-center relative group"
+          >
+            <img src="/images/profil.jpeg" alt="Profile" className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-border/50 object-cover group-hover:scale-125 transition-all duration-300 " />
+
+            {/* permanently Moving cursor icon on top of the link */}
+            {!isAboutPage && (
+              <div
+                className={`absolute animate-bounce group-hover:scale-0 transition-all duration-200 ${isScrolled ? "-right-4 -bottom-1 -rotate-45" : "-left-4 -bottom-1 rotate-45"}`}
+              >
+                <Icon icon="carbon:touch-1-filled" className={`${isScrolled ? "size-5" : "size-6"} group-hover:scale-125 transition-transform opacity-60 dark:opacity-100 `} />
+              </div>
+            )}
           </a>
 
           <button
             onClick={toggleLang}
-            className="flex items-center gap-2 px-3 md:px-4 py-2 rounded-full border border-border/50 hover:bg-accent/50 transition-all text-[10px] uppercase md:backdrop-blur-sm group whitespace-nowrap"
+            className="flex items-start gap-1 px-3 md:px-4 py-2 rounded-full border border-border/50 hover:bg-accent/50 transition-all text-sm uppercase md:backdrop-blur-sm group whitespace-nowrap"
           >
-            <Icon icon="lucide:languages" className="w-3.5 h-3.5 group-hover:rotate-12 transition-transform" />
+            <Icon icon="lucide:languages" className="size-3 group-hover:rotate-12 transition-transform" />
             <span className="hidden xs:inline">{lang === 'fr' ? 'FR' : 'EN'}</span>
             <span className="xs:hidden">{lang.toUpperCase()}</span>
           </button>

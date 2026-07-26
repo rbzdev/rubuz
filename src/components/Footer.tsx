@@ -1,7 +1,13 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import { translations, type Language } from '../i18n/translations';
 
-export default function Footer() {
+interface FooterProps {
+  lang?: Language;
+}
+
+export default function Footer({ lang = 'fr' }: FooterProps) {
+  const t = translations[lang];
   return (
     <footer className="px-6 py-16 border-t border-border mt-20 bg-background/50 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 text-sm">
@@ -9,7 +15,9 @@ export default function Footer() {
           <div className="text-xl tracking-tight">
             Mr Rubuz<span className="text-primary">.</span>
           </div>
-          <p className="text-muted-foreground font-medium">© {new Date().getFullYear()} Rubuz Portfolio. Built with Astro & React.</p>
+          <p className="text-muted-foreground font-medium">
+            © {new Date().getFullYear()} Rubuz Portfolio. {t.footer.built_with} (<a href="https://github.com/rbzdev/rubuz" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Get It Now</a>).
+          </p>
         </div>
 
         <div className="flex flex-col items-center md:items-end gap-6">

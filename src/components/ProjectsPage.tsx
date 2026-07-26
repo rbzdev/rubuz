@@ -91,45 +91,55 @@ export default function ProjectsPage() {
                      {t.projects}
                   </h1>
                   <p className="text-xl leading-relaxed max-w-4xl mt-6 text-muted-foreground">
-                     {lang === 'fr' ? "Quelques réalisation que j'ai eu à concrétiser/contribuer à travers +5 ans d'expérience." : "Some of the projects I've had the opportunity to work on over the past 5+ years."}
+                     {lang === 'fr' ? "Quelques réalisation que j'ai eu à concrétiser/contribuer à travers +6 ans d'expérience." : "Some of the projects I've had the opportunity to work on over the past 6+ years."}
                   </p>
                </motion.div>
             </header>
 
             {/* Bento Grid Vertical */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[300px]">
-               {(projectsData as Project[]).map((project, i) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[300px] grid-flow-dense">
+               {(projectsData as Project[]).map((project, i) => {
+                  const bentoPattern = [
+                     "md:col-span-2 md:row-span-2", // 0: 2x2 (ex: Vira)
+                     "md:col-span-1 md:row-span-1", // 1: 1x1
+                     "md:col-span-1 md:row-span-1", // 2: 1x1
+                     "md:col-span-1 md:row-span-2", // 3: 1x2 (ex: Orix vertical)
+                     "md:col-span-1 md:row-span-1", // 4: 1x1 (remplit le trou sous 2)
+                     "md:col-span-2 md:row-span-2", // 5: 2x2
+                     "md:col-span-1 md:row-span-1", // 6: 1x1
+                     "md:col-span-2 md:row-span-1", // 7: 2x1 horizontal
+                  ];
+                  const bentoClass = bentoPattern[i % bentoPattern.length];
+
+                  return (
                   <motion.div
                      layoutId={`card-${project.id}`}
                      key={project.id}
                      onClick={() => setSelectedId(project.id)}
-                     className={`group relative overflow-hidden rounded-sm border border-border/50 bg-secondary/10 cursor-pointer shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all duration-500
-                ${i % 4 === 0 ? 'md:col-span-2 md:row-span-2' : ''}
-                ${i % 4 === 3 ? 'md:col-span-1 md:row-span-2' : ''}
-              `}
+                     className={`group relative overflow-hidden rounded-sm border border-border/50 bg-secondary/10 cursor-pointer shadow-xl shadow-primary/5 hover:shadow-primary/10 transition-all duration-500 ${bentoClass}`}
                   >
                      <motion.img
                         layoutId={`img-${project.id}`}
                         src={project.image}
                         alt={project.title}
-                        className="absolute inset-0 object-cover w-full h-full  transition-all duration-700 scale-100 group-hover:scale-105"
+                        className="absolute inset-0 object-cover object-top-left w-full h-full  transition-all duration-700 scale-100 group-hover:scale-105"
                      />
                      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-100 transition-opacity" />
 
                      <div className="absolute top-6 left-6 flex gap-2">
                         <motion.span
                            layoutId={`type-${project.id}`}
-                           className="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] uppercase font-medium tracking-widest text-white border border-white/20"
+                           className="px-3 py-1 bg-black/70 backdrop-blur-sm rounded-full text-[10px] font-medium text-white border border-white/20"
                         >
                            {project.type}
                         </motion.span>
-                        <div className={`px-2 py-1 rounded-full text-[10px] uppercase tracking-widest border backdrop-blur-md flex items-center gap-1.5 ${statusConfig[project.status].color}`}>
+                        <div className={`px-2 py-1 rounded-full text-[10px] uppercase border backdrop-blur-md flex items-center gap-1 ${statusConfig[project.status].color}`}>
                            <Icon icon={statusConfig[project.status].icon} className="w-2.5 h-2.5" />
                            {statusConfig[project.status].label[lang]}
                         </div>
                      </div>
 
-                     <div className="absolute bottom-0 left-0 right-0 p-8 space-y-2">
+                     <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-8 space-y-2">
                         <div className="flex items-end justify-between">
                            <div>
                               <motion.h2 layoutId={`title-${project.id}`} className="text-3xl text-white uppercase tracking-tighter leading-none">
@@ -142,7 +152,7 @@ export default function ProjectsPage() {
                         </div>
                      </div>
                   </motion.div>
-               ))}
+               )})}
             </div>
 
             {/* Expanded View */}
@@ -154,7 +164,7 @@ export default function ProjectsPage() {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={() => setSelectedId(null)}
-                        className="absolute inset-0 bg-primary/60 backdrop-blur-xs"
+                        className="absolute inset-0 dark:bg-black/60 bg-white/60 backdrop-blur-xs"
                      />
 
                      <motion.div
@@ -184,10 +194,10 @@ export default function ProjectsPage() {
                            <div className="flex items-start justify-between">
                               <div className="space-y-4">
                                  <div className="flex gap-2">
-                                    <motion.span layoutId={`type-${selectedId}`} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] uppercase tracking-widest border border-primary/20">
+                                    <motion.span layoutId={`type-${selectedId}`} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-[10px] border border-primary/20">
                                        {selectedProject.type}
                                     </motion.span>
-                                    <div className={`px-3 py-1 rounded-full text-[10px] uppercase tracking-widest border flex items-center gap-1.5 ${statusConfig[selectedProject.status].color}`}>
+                                    <div className={`px-3 py-1 rounded-full text-[10px] uppercase border flex items-center gap-1.5 ${statusConfig[selectedProject.status].color}`}>
                                        <Icon icon={statusConfig[selectedProject.status].icon} className="w-2.5 h-2.5" />
                                        {statusConfig[selectedProject.status].label[lang]}
                                     </div>
@@ -201,11 +211,11 @@ export default function ProjectsPage() {
 
                            <div className="grid grid-cols-2 gap-8 py-8 border-y border-border/50">
                               <div className="space-y-1">
-                                 <span className="text-[10px] uppercase text-muted-foreground tracking-widest">{lang === 'en' ? 'Year' : 'Année'} </span>
+                                 <span className="text-[10px] uppercase text-muted-foreground">{lang === 'en' ? 'Year' : 'Année'} </span>
                                  <p className="font-medium">{selectedProject.year || "2024"}</p>
                               </div>
                               <div className="space-y-1">
-                                 <span className="text-[10px] uppercase text-muted-foreground tracking-widest">{lang === 'en' ? 'Status' : 'Statut'}</span>
+                                 <span className="text-[10px] uppercase text-muted-foreground">{lang === 'en' ? 'Status' : 'Statut'}</span>
                                  <p className="font-medium capitalize">{statusConfig[selectedProject.status].label[lang]}</p>
                               </div>
                            </div>
@@ -257,7 +267,7 @@ export default function ProjectsPage() {
             </AnimatePresence>
          </main>
 
-         <Footer />
+         <Footer lang={lang} />
       </div>
    );
 }

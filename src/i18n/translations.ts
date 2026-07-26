@@ -14,7 +14,7 @@ export const translations = {
     projects: "Projets",
     about_me: {
       title: "À propos de moi",
-      description: "Passionné par le développement depuis plus de 5 ans, je me spécialise dans la création d'applications robustes et scalables. Mon approche combine design minimaliste et performances optimales.",
+      description: "Passionné par le développement depuis plus de 6 ans, je me spécialise dans la création d'applications robustes et scalables. Mon approche combine design minimaliste et performances optimales.",
       skills_title: "Savoir-faire",
       tools_title: "Outils & Environnement",
       gdg_title: "GDG Member & Google Badges",
@@ -25,6 +25,9 @@ export const translations = {
     languages: {
       en: "English",
       fr: "Français"
+    },
+    footer: {
+      built_with: "Aucun droit réservé, ce projet est libre d'accès"
     }
   },
   en: {
@@ -42,7 +45,7 @@ export const translations = {
     projects: "Projects",
     about_me: {
       title: "About Me",
-      description: "Passionate about development for over 5 years, I specialize in building robust and scalable applications. My approach combines minimalist design with optimal performance.",
+      description: "Passionate about development for over 6 years, I specialize in building robust and scalable applications. My approach combines minimalist design with optimal performance.",
       skills_title: "Expertise",
       tools_title: "Tools & Environment",
       gdg_title: "GDG Member & Google Badges",
@@ -53,6 +56,9 @@ export const translations = {
     languages: {
       en: "English",
       fr: "Français"
+    },
+    footer: {
+      built_with: "No rights reserved, this project is open access"
     }
   }
 } as const;

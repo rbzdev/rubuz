@@ -1,9 +1,58 @@
 [
   {
+    "id": "vira",
+    "title": "Vira",
+    "description": "Ecosystème de gestion, réservation à distantce de titre de transport inter-urbain et outils de gestion B2B pour les compagnies.",
+    "longDescription": "Vira est une solution SaaS B2B et B2C, elle est conçue pour répondre aux besoins des compagnies de transport inter-urbain et des voyageurs. Elle intègre un système de réservation en ligne, une gestion des ventes en temps réel pour les organisateurs et une interface utilisateur fluide pour les festivaliers. Développée pour répondre aux besoins du marché local avec des options de paiement adaptées.",
+    "image": "/images/projects/vira/spot/2.png",
+    "gallery": [
+      "/images/projects/vira/spot/2.png",
+      "/images/projects/vira/web/1.png",
+      "/images/projects/vira/web/2.png",
+      "/images/projects/vira/web/3.png",
+      "/images/projects/vira/web/4.png",
+      "/images/projects/vira/web/5.png",
+      "/images/projects/vira/mobile/1.png",
+      "/images/projects/vira/mobile/2.png",
+      "/images/projects/vira/mobile/3.png",
+      "/images/projects/vira/mobile/4.png",
+      "/images/projects/vira/mobile/tab-1.png",
+      "/images/projects/vira/mobile/tab-2.png",
+      "/images/projects/vira/mobile/tab-3.png",
+      "/images/projects/vira/mobile/tab-4.png",
+      "/images/projects/vira/spot/1.png",
+      "/images/projects/vira/spot/2.png"
+    ],
+    "link": "https://vira.safaridew.com",
+    "type": "Systeme",
+    "year": "2026",
+    "status": "active"
+  },
+  {
+    "id": "idnova",
+    "title": "Idnova",
+    "description": "Le système complet de l'identité connectée",
+    "longDescription": "Idnova est une solution de gestion, identification et traçage pour les étudiants, apprénant et les citoyens d'un état. Elle intègre un système d'enregistrement, d'identification, de traçage et de gestion des identités pour le cursus de chaque individu, et permet la communication entre les différents acteurs et parties prenantes via un ID national unique, sécurisé et infalsifiable.",
+    "image": "/images/projects/idnova/dashboard/1.png",
+    "gallery": [
+      "/images/projects/idnova/mobile/1.png",
+      "/images/projects/idnova/dashboard/1.png",
+      "/images/projects/idnova/dashboard/2.png",
+      "/images/projects/idnova/dashboard/3.png",
+      "/images/projects/idnova/dashboard/4.png",
+      "/images/projects/idnova/dashboard/5.png",
+      "/images/projects/idnova/dashboard/6.png"
+    ],
+    "link": "https://idnova.venusgroup.work/",
+    "type": "Systeme",
+    "year": "2026",
+    "status": "active"
+  },
+  {
     "id": "teeky",
     "title": "Teeky",
     "description": "Solution complète de billetterie numérique pour événements et concerts.",
-    "longDescription": "Teeky est une plateforme de billetterie innovante conçue pour simplifier l'accès aux événements culturels. Elle intègre un système de QR codes sécurisés, une gestion des ventes en temps réel pour les organisateurs et une interface utilisateur fluide pour les festivaliers. Développée pour répondre aux besoins du marché local avec des options de paiement adaptées.",
+    "longDescription": "Teeky est une plateforme de billetterie innovante conçue pour simplifier l'accès aux événements (sportifs, culturels, meetups, mariages, etc..). Elle intègre un système de QR codes sécurisés, une gestion d'émission et de scan en temps réel pour les organisateurs et une interface utilisateur fluide pour les participants/invités. Développée pour répondre aux besoins du marché local.",
     "image": "/images/projects/teeky/1.png",
     "gallery": [
       "/images/projects/teeky/1.png",
@@ -19,7 +68,7 @@
     "id": "orix",
     "title": "Orix Design System",
     "description": "Un framework UI moderne et un design system complet pour applications SaaS.",
-    "longDescription": "Orix est plus qu'un simple kit UI. C'est un design system complet axé sur la productivité et l'esthétique moderne. Il propose une bibliothèque de composants React réutilisables, une gestion rigoureuse des tokens de design et une documentation interactive exhaustive. Idéal pour accélérer le développement de plateformes SaaS complexes.",
+    "longDescription": "Orix est plus qu'un simple kit UI. C'est un design system complet axé sur la productivité et l'esthétique moderne. Il propose une bibliothèque de composants React réutilisables, une gestion rigoureuse des tokens de design et une documentation interactive exhaustive. Idéal pour accélérer le développement de plateformes SaaS complexes. Orix est open-source, et disponible sur GitHub.",
     "image": "/images/projects/orix/1.png",
     "gallery": [
       "/images/projects/orix/1.png",
@@ -34,7 +83,7 @@
       "/images/projects/orix/10.png",
       "/images/projects/orix-ui-github-dark.png"
     ],
-    "link": "https://orix-three.vercel.app",
+    "link": "https://orix.safaridew.com",
     "type": "Open Source registry",
     "year": "2026",
     "status": "active"
@@ -42,8 +91,8 @@
   {
     "id": "bilokos",
     "title": "Bilokos Marketplace",
-    "description": "Plateforme de commerce local connectant les producteurs et les consommateurs.",
-    "longDescription": "Bilokos facilite l'accès aux produits frais et locaux. La plateforme permet aux petits producteurs de digitaliser leur inventaire et de vendre directement aux consommateurs urbains. Elle inclut un système de logistique intégré, une gestion des stocks optimisée et une interface de paiement sécurisée.",
+    "description": "Plateforme e-commerce de petites annonces local connectant les vendeurs et les acheteurs.",
+    "longDescription": "Bilokos est inspiré de marketplace comme eBay, Leboncoin, etc... C'est une plateforme de petites annonces pour vendre et acheter des produits et services de toutes sortes. Elle est conçue pour répondre aux besoins du marché local avec des options de paiement adaptées et la prise de contacte direct via WhatsApp, SMS ou Appel direct.",
     "image": "/images/projects/bilokos/1.png",
     "gallery": [
       "/images/projects/bilokos/1.png",
@@ -58,8 +107,8 @@
   {
     "id": "aroma",
     "title": "Aroma Experience",
-    "description": "Boutique e-commerce premium pour produits de beauté et soins.",
-    "longDescription": "Aroma Experience est une vitrine digitale pour une marque de cosmétiques de luxe. L'accent a été mis sur le storytelling visuel et une expérience d'achat immersive. Performance optimisée pour le SEO et intégration de systèmes de recommandations personnalisés basés sur le type de peau.",
+    "description": "Boutique e-commerce premium pour produits de beauté et soins de luxe.",
+    "longDescription": "Aroma Experience est une vitrine digitale pour une marque de cosmétiques de luxe. L'accent a été mis sur le storytelling visuel et une expérience d'achat immersive. Performance optimisée pour le SEO et intégration de systèmes de recommandations personnalisés basés sur le type de produits, avec des moyens de paiements Mobile-Money, VISA ou PayPal.",
     "image": "/images/projects/aroma/1.png",
     "gallery": [
       "/images/projects/aroma/1.png",
@@ -75,8 +124,8 @@
   {
     "id": "suppy",
     "title": "Suppy AI Tools",
-    "description": "Gestion intelligente de la chaîne d'approvisionnement et suivi de flotte.",
-    "longDescription": "Suppy est un outil B2B puissant pour la gestion logistique. Il permet de suivre les expéditions en temps réel, d'optimiser les itinéraires de livraison et de gérer les entrepôts avec précision. Une solution pensée pour les entreprises cherchant à réduire leurs coûts opérationnels.",
+    "description": "Suppy est un outil qui regorge des outiles IA pour les besoins quotidiens, comme des generateurs de texte, d'images, enlever l'arrière plan et chater avec différents modèles de langage naturels, etc...",
+    "longDescription": "Suppy est un ensemble d'outils basés sur l'IA, conçus pour automatiser et améliorer diverses tâches quotidiennes, professionnelles et créatives. Des générations de textes polyvalentes (lettres, emails, posts réseaux sociaux, scripts, poèmes...) à la création d'images uniques via intelligence artificielle, en passant par des outils pratiques comme la suppression d'arrière-plans et des interfaces de discussion avancées avec de grands modèles linguistiques. Suppy permet de converser avec ChatGPT, Claude, Gemini, Llama, Grok, Mistral et bien d'autres, et d'avoir de l'aide pour des tâches spécifiques sur un seul interface, switcher sur plusieurs modèles et comparer les résultats. Les résultats sont rapides, fiables et optimisés pour les besoins de l'utilisateur.",
     "image": "/images/projects/suppy/1.png",
     "gallery": [
       "/images/projects/suppy/1.png",
@@ -86,16 +135,16 @@
       "/images/projects/suppy/5.png",
       "/images/projects/suppy/6.png"
     ],
-    "link": "https://suppy.us",
+    "link": "https://suppy-three.vercel.app",
     "type": "SaaS AI",
     "year": "2025",
     "status": "active"
   },
   {
     "id": "elanga",
-    "title": "Elanga",
-    "description": "Innovation technologique au service de l'agriculture moderne.",
-    "longDescription": "Elanga utilise l'IoT et l'analyse de données pour améliorer les rendements agricoles. Le projet inclut une plateforme de monitoring des sols, des prévisions météorologiques hyper-locales et un système de conseil automatisé pour les agriculteurs.",
+    "title": "Elanga Shop",
+    "description": "Plateforme SaaS pour la création et la gestion de boutiques en ligne.",
+    "longDescription": "Elanga est système SAAS multi-tenant permettant à des particuliers et business de créer et gérer facilement leurs boutique en ligne, se créer une notorieté en ligne sans être un expert tech. Bénéficier d'un référencement naturel et d'un site web intégré. Inspiré de Shopify et de Etsy",
     "image": "/images/projects/elanga/1.png",
     "gallery": [
       "/images/projects/elanga/1.png"
@@ -116,9 +165,120 @@
       "/images/projects/slater-security/2.png",
       "/images/projects/slater-security/3.png"
     ],
-    "link": "https://slater.security",
+    "link": "https://slater-security.vercel.app/",
     "type": "Systeme",
     "year": "2025-2026",
+    "status": "active"
+  },
+  {
+    "id": "zero-probables",
+    "title": "0%PROBABLES",
+    "description": "Système de surveillance et de sécurité connectée pour entreprises.",
+    "longDescription": "Une solution de sécurité intégrée combinant matériel et logiciel. Slater Security propose une interface de contrôle d'accès simplifiée, un monitoring vidéo intelligent et un système d'alertes instantanées en cas d'intrusion.",
+    "image": "/images/projects/0probables/mobile/1.png",
+    "gallery": [
+      "/images/projects/0probables/mobile/2.png",
+      "/images/projects/0probables/mobile/1.png",
+      "/images/projects/0probables/mobile/3.png",
+      "/images/projects/0probables/web/1.png"
+    ],
+    "link": "https://play.google.com/store/apps/details?id=com.safaridew.zeroprobables&pli=1",
+    "storeLinks": {
+      "google": "https://play.google.com/store/apps/details?id=com.safaridew.zeroprobables&pli=1",
+      "apple": "https://apps.apple.com/us/app/0-probables/id6752837334"
+    },
+    "type": "Application Mobile",
+    "year": "2025-2026",
+    "status": "active"
+  },
+  {
+    "id": "moon-digital",
+    "title": "Agence Moon Digital",
+    "description": "Agence de création et marketing digital.",
+    "longDescription": "Moon Digital est une agence spécialisée dans la création de l'identité visuelle et la communication digitale des entreprises. Elle propose également des services de marketing digital pour aider les entreprises à accroître leur visibilité en ligne.",
+    "image": "/images/projects/moon-digital/1.png",
+    "gallery": [
+      "/images/projects/moon-digital/1.png",
+      "/images/projects/moon-digital/2.png",
+      "/images/projects/moon-digital/3.png",
+      "/images/projects/moon-digital/5.png",
+      "/images/projects/moon-digital/6.png",
+      "/images/projects/moon-digital/4.png"
+    ],
+    "link": "https://moondigital-ashy.vercel.app",
+    "type": "Agence",
+    "year": "2025",
+    "status": "active"
+  },
+  {
+    "id": "wanderlate",
+    "title": "Wanderlate",
+    "description": "Plateforme de réservation de séjour.",
+    "longDescription": "Inspiré de Airbnb et Booking.com, Wanderlate est une plateforme de booking de séjour, pour particuliers et entreprises, qui propose des offres de logement, des activités et des expériences touristiques. Utilise aussi l'API hotelbeds et les hotels des particuliers. Dispose d'une interface pour gérer les réservations, les paiements, les notifications, etc...",
+    "image": "/images/projects/wanderlate/5.png",
+    "gallery": [
+      "/images/projects/wanderlate/1.png",
+      "/images/projects/wanderlate/2.png",
+      "/images/projects/wanderlate/3.png",
+      "/images/projects/wanderlate/4.png",
+      "/images/projects/wanderlate/5.png",
+      "/images/projects/wanderlate/6.png",
+      "/images/projects/wanderlate/7.png",
+      "/images/projects/wanderlate/8.png"
+    ],
+    "link": "https://wanderlate-five.vercel.app/",
+    "type": "SaaS",
+    "year": "2025",
+    "status": "active"
+  },
+  {
+    "id": "safaridew-store",
+    "title": "SafariDew Store",
+    "description": "Boutique en ligne pour gadgets tech, fournitures de bureau, articles d'intérieur et de décoration, etc...",
+    "longDescription": "Inspiré de Aliexpress et Amazon, SafariDew Store est une boutique en ligne pour gadgets tech, fournitures de bureau, articles d'intérieur et de décoration, etc... Avec panier, catalogue de produits, paiement Mobile Money et livraison à domicile ou expédition.",
+    "image": "/images/projects/safaridew-store/2.png",
+    "gallery": [
+      "/images/projects/safaridew-store/1.png",
+      "/images/projects/safaridew-store/2.png",
+      "/images/projects/safaridew-store/3.png",
+      "/images/projects/safaridew-store/4.png",
+      "/images/projects/safaridew-store/5.png"
+    ],
+    "link": "https://safaridew.vercel.app/Boutique",
+    "type": "Store",
+    "year": "2026",
+    "status": "active"
+  },
+  {
+    "id": "safaridew",
+    "title": "SafariDew startup",
+    "description": "Safaridew est une startup tech dans le domaine de développement de solutions innovantes pour répondre aux besoin de la communauté africaine.",
+    "longDescription": "Safaridew est une startup tech dans le domaine de développement de solutions innovantes pour répondre aux besoin de la communauté africaine.",
+    "image": "/images/projects/safaridew/1.png",
+    "gallery": [
+      "/images/projects/safaridew/2.png",
+      "/images/projects/safaridew/1.png"
+    ],
+    "link": "https://safaridew.com",
+    "type": "Startup",
+    "year": "2024",
+    "status": "active"
+  },
+  {
+    "id": "15-cercle-xi",
+    "title": "Cercle Scientifique Math-Info",
+    "description": "Conception du site web du cercle scientifique math-info.",
+    "longDescription": "Le cercle Scientifique est une communauté de passionés de Mathématiques et d'Informatiques. Nous organisons des activités scientifiques, culturelles et sportives pour nos membres. Nous proposons également des formations et des conférences pour nos membres. Organisé par la faculté des Sciences de l'Université de Lubumbashi",
+    "image": "/images/projects/cercle-xi/4.png",
+    "gallery": [
+      "/images/projects/cercle-xi/1.png",
+      "/images/projects/cercle-xi/2.png",
+      "/images/projects/cercle-xi/3.png",
+      "/images/projects/cercle-xi/4.png"
+    ],
+    "link": "https://safaridew.com",
+    "type": "Startup",
+    "year": "2024",
     "status": "active"
   }
 ]
